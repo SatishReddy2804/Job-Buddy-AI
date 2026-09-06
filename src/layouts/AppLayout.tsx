@@ -6,6 +6,7 @@ import {
   KanbanSquare,
   FileText,
   BarChart3,
+  GraduationCap,
   Settings,
   LogOut,
   Menu,
@@ -23,6 +24,7 @@ const NAV = [
   { to: '/app/applications', label: 'Applications', icon: KanbanSquare },
   { to: '/app/resumes', label: 'Resumes', icon: FileText },
   { to: '/app/analytics', label: 'Analytics', icon: BarChart3 },
+  { to: '/app/skills', label: 'Skill Developer', icon: GraduationCap },
   { to: '/app/settings', label: 'Settings', icon: Settings },
 ];
 
