@@ -91,7 +91,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       provider,
       options: { redirectTo: `${window.location.origin}/auth` },
     });
-    if (error) return { error: error.message };
+    if (error) {
+      if (error.message.includes('provider') || error.message.includes('not enabled') || error.message.includes('OAuth')) {
+        return { error: `${provider === 'google' ? 'Google' : 'GitHub'} sign-in is not configured yet. Please use email/password sign-up for now, or ask the site owner to enable ${provider === 'google' ? 'Google' : 'GitHub'} OAuth in the authentication settings.` };
+      }
+      return { error: error.message };
+    }
     return { error: null };
   };
 
