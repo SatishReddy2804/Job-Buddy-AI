@@ -19,6 +19,7 @@ import { useAuth } from '@/context/AuthContext';
 import { fetchProfileSkills, fetchJobs } from '@/lib/api';
 import { PageHeader, EmptyState, Spinner, ScoreRing } from '@/components/ui';
 import { classNames } from '@/lib/utils';
+import { CourseCardIcons } from '@/components/CourseCardIcons';
 import type { Job, ProfileSkill } from '@/types';
 
 interface LearningStep {
@@ -26,6 +27,9 @@ interface LearningStep {
   description: string;
   estimatedTime: string;
   resourceType: string;
+  youtubeUrl?: string;
+  courseUrl?: string;
+  platform?: string;
 }
 
 interface SkillPlan {
@@ -478,6 +482,12 @@ export default function SkillDeveloperPage() {
                           <div className="flex items-center gap-3 text-xs text-secondary-400">
                             <span className="flex items-center gap-1"><BookOpen className="h-3 w-3" /> {step.resourceType}</span>
                             <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> {step.estimatedTime}</span>
+                            <CourseCardIcons
+                              courseTitle={step.title}
+                              youtubeUrl={step.youtubeUrl}
+                              courseUrl={step.courseUrl}
+                              platform={step.platform}
+                            />
                           </div>
                         </div>
                       </div>
