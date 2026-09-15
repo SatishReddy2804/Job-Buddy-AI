@@ -44,6 +44,15 @@ Job Buddy AI discovers jobs, matches them to your profile and resume, tailors yo
 - **Interview prep** — generates role-specific practice questions across technical, behavioral, and system-design categories
 - Direct apply link when available
 
+### Skill Developer
+- Analyzes your current skills against all available job postings to identify skill gaps
+- Shows how frequently each missing skill appears as required vs. preferred across jobs
+- Generates personalized learning plans with priority levels (high/medium/low) based on market demand
+- Each plan includes a 4-step learning path (course, project, deep dive, practice) with estimated time and resource types
+- Check off steps as you complete them with per-plan and overall progress tracking
+- Search skill gaps and generate plans for any custom skill you want to learn
+- **Course link icons** on every learning step — a YouTube icon linking to a tutorial and a graduation-cap icon linking to an external course (Coursera, Udemy, edX, etc.), each opening in a new tab with tooltips. When real URLs are not provided, demo search links are generated automatically from the step title so every card always has working resource links.
+
 ### Analytics Dashboard
 - Application funnel: applied → viewed → interview → offer with conversion rates at each stage
 - Pipeline breakdown showing distribution across all stages
@@ -153,7 +162,7 @@ Both variables are required for the app to function. If you set up your own Supa
 Job-Buddy-AI/
 ├── public/                      # Static assets
 ├── src/
-│   ├── components/              # Reusable UI components (Logo, buttons, cards, etc.)
+│   ├── components/              # Reusable UI components (Logo, buttons, cards, CourseCardIcons, etc.)
 │   ├── context/                 # React context providers (AuthContext)
 │   ├── hooks/                   # Custom hooks (useApplications, useCurrencyRates)
 │   ├── layouts/                 # Layout wrappers (AppLayout with sidebar navigation)
@@ -173,6 +182,7 @@ Job-Buddy-AI/
 │   │   ├── ApplicationsPage.tsx # Application pipeline (list + board views)
 │   │   ├── ResumesPage.tsx      # Resume upload, builder, and management
 │   │   ├── AnalyticsPage.tsx    # Funnel metrics and conversion analytics
+│   │   ├── SkillDeveloperPage.tsx # Skill gap analysis and learning plan generator
 │   │   └── SettingsPage.tsx     # Profile and preferences settings
 │   ├── types/                   # TypeScript type definitions
 │   ├── App.tsx                  # Root component with routing
