@@ -129,6 +129,17 @@ The production build is output to the `dist/` directory. Preview it with:
 npm run preview
 ```
 
+### Deploying to Vercel
+
+1. Import this GitHub repository into Vercel.
+2. Keep the framework preset as **Vite**. The default build command (`npm run build`) and output directory (`dist`) are already configured by the project.
+3. Add these environment variables in the Vercel project settings for the **Production**, **Preview**, and **Development** environments:
+	- `VITE_SUPABASE_URL`
+	- `VITE_SUPABASE_ANON_KEY`
+4. Deploy the project. The included `vercel.json` keeps client-side React Router routes working when a URL is opened or refreshed directly.
+
+Do not commit `.env` or expose Supabase service-role keys in the frontend. The browser app only needs the public anon key, and Supabase Row Level Security must remain enabled.
+
 ### Type checking
 
 ```bash
@@ -145,7 +156,7 @@ npm run lint
 
 ## Environment Variables
 
-The project includes a `.env` file with the following variables pre-configured for the provisioned Supabase instance:
+Create a local `.env` file for development, or add the same variables in Vercel's project settings:
 
 | Variable | Description |
 |---|---|

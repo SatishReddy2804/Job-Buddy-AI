@@ -7,7 +7,6 @@ import {
   BookOpen,
   CheckCircle2,
   Circle,
-  ArrowRight,
   Sparkles,
   Lightbulb,
   Loader2,
@@ -79,7 +78,6 @@ function generateLearningPlan(skillName: string, marketDemand: number, priority:
 function categorizeSkillGap(
   missingSkills: string[],
   jobs: Job[],
-  userSkillCount: number,
 ): SkillPlan[] {
   const skillFreq = new Map<string, { required: number; preferred: number }>();
   for (const job of jobs) {
@@ -159,7 +157,7 @@ export default function SkillDeveloperPage() {
   const generatePlans = () => {
     setGenerating(true);
     setTimeout(() => {
-      const newPlans = categorizeSkillGap(skillGap, jobs, userSkillNames.length);
+      const newPlans = categorizeSkillGap(skillGap, jobs);
       setPlans(newPlans);
       setGenerating(false);
     }, 600);

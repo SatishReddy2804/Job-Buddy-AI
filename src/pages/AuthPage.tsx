@@ -8,7 +8,6 @@ import {
   User,
   Check,
   X,
-  ArrowRight,
   KeyRound,
   Phone,
 } from 'lucide-react';
@@ -57,7 +56,6 @@ export default function AuthPage() {
   const [emailError, setEmailError] = useState<string | null>(null);
   const [passwordError, setPasswordError] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [info, setInfo] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [oauthLoading, setOauthLoading] = useState<string | null>(null);
 
